@@ -13,6 +13,7 @@ import {
   Stethoscope,
   TestTube2,
   Users,
+  UserCog,
   ArrowUpRight,
   AlertCircle,
 } from 'lucide-react';
@@ -25,6 +26,7 @@ export const modules: Module[] = [
   { id: 'urgences', name: 'Urgences', description: 'Priorités et prise en charge', icon: HeartPulse, tone: 'red', count: 'En développement', active: false, submenu: ['Tri', 'Salles', 'Ambulances', 'Code rouge'] },
   { id: 'consultations', name: 'Consultations', description: 'Rendez-vous et dossiers patients', icon: Stethoscope, tone: 'purple', count: 'En développement', active: false, submenu: ['Planning', 'Dossiers', 'Ordonnances', 'Suivi'] },
   { id: 'imagerie', name: 'Imagerie médicale', description: 'Examens et comptes rendus', icon: Activity, tone: 'teal', count: 'En développement', active: false, submenu: ['Radiologie', 'Échographie', 'IRM', 'Comptes rendus'] },
+  { id: "utilisateurs", name: "Utilisateurs", description: "Comptes, roles et permissions", icon: UserCog, tone: "slate", count: "Administration", active: true, submenu: ["Comptes"] },
 ];
 
 export const initialAnalyses: Analysis[] = [
@@ -89,6 +91,7 @@ export function submenuIcon(item: string) {
     'Échographie': Activity,
     'IRM': Microscope,
     'Comptes rendus': ClipboardList,
+    "Comptes": UserCog,
   };
   return map[item] ?? LayoutDashboard;
 }

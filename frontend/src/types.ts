@@ -1,6 +1,6 @@
 import type { LucideIcon } from 'lucide-react';
 
-export type ModuleId = 'pharmacie' | 'hopital' | 'laboratoire' | 'urgences' | 'consultations' | 'imagerie';
+export type ModuleId = 'pharmacie' | 'hopital' | 'laboratoire' | 'urgences' | 'consultations' | 'imagerie' | 'utilisateurs';
 export type View = 'modules' | ModuleId;
 export type LabSection =
   | 'Vue d’ensemble'
@@ -64,4 +64,22 @@ export type Module = {
   count: string;
   active: boolean;
   submenu: string[];
+};
+
+export type AppUser = {
+  id: string;
+  email: string;
+  fullName: string;
+  enabled: boolean;
+  mustChangePassword: boolean;
+  roles: string[];
+  permissions: string[];
+  createdAt: string;
+};
+
+export type AppRole = {
+  id: number;
+  name: string;
+  description: string;
+  permissions: string[];
 };
